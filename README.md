@@ -10,7 +10,6 @@ K_MODIFICATIONS adds significant overhead and will be disabled by default in the
 press this warning.
   'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
 Error: Directory migrations already exists
-
 Step 2.
 ``` 
 (Flask_trial) d:\project\Python\Deploy_Flask_on_Heroku>python dbcreate.py db migrate
@@ -23,7 +22,6 @@ INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
 INFO  [alembic.autogenerate.compare] Detected added table 'CallPutJPG'
 INFO  [alembic.autogenerate.compare] Detected added table 'PictureDate'
 Generating d:\project\Python\Deploy_Flask_on_Heroku\migrations\versions\4663c0d429d6_.py ... done
-
 Step 3.
 ``` 
 (Flask_trial) d:\project\Python\Deploy_Flask_on_Heroku>python dbcreate.py db upgrade
@@ -32,7 +30,6 @@ C:\Users\SCS\Envs\Flask_trial\lib\site-packages\flask_sqlalchemy\__init__.py:794
 INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
 INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
 INFO  [alembic.runtime.migration] Running upgrade 64a46080374d -> 4663c0d429d6, empty message
-
 Step 4.
 ``` 
 (Flask_trial) d:\project\Python\Deploy_Flask_on_Heroku>python dbInsert.py
