@@ -53,6 +53,25 @@ Step 5. Enjoy it.
 
 ![alt tag](https://imgur.com/yoSxIRg)
 
+## Upload to Heroku
+Step 1. heroku git:remote -a
+
+![alt tag](https://imgur.com/AdDZgLY)
+
+Step 2. Log on Heroku.
+
+![alt tag](https://imgur.com/L1cnYWk)
+
+Step 3. Enjoy it on Heroku.
+
+![alt tag](https://marvelcomics-excelsior.herokuapp.com/)
+
 ## Environment Configuration
+* Windows 10
 * Python 3.6
 * Refer requirements.txt to pip necessary modules.
+
+## Reference 
+* [Flask-Migrate-Tutorial 透過 Flask-Migrate-Tutorial 管理資料庫 (database)](https://github.com/twtrubiks/Flask-Migrate-Tutorial)
+* [Deploying-Flask-To-Heroku 今天教大家如何佈署 Flask App 到 Heroku](https://github.com/twtrubiks/Deploying-Flask-To-Heroku)
+* [flask_sqlalchemy_bulk_insert Performance test of bulk insert that inserts multiple rows from Google Drive by flask sqlalchemy](https://github.com/philip-shen/flask_sqlalchemy_bulk_insert)
