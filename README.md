@@ -49,6 +49,10 @@ Insert 1038 rows into table.
 SA ORM Bulk insert, using dictionaries- total time: 0.40 seconds
 ``` 
 
+Step 5. Enjoy it.
+
+![alt tag](https://imgur.com/yoSxIRg)
+
 ## Environment Configuration
 * Python 3.6
 * Refer requirements.txt to pip necessary modules.
