@@ -51,16 +51,16 @@ SA ORM Bulk insert, using dictionaries- total time: 0.40 seconds
 
 Step 5. Enjoy it.
 
-![alt tag](https://imgur.com/yoSxIRg)
+![alt tag](https://imgur.com/yoSxIRg.jpg)
 
 ## Upload to Heroku
 Step 1. heroku git:remote -a
 
-![alt tag](https://imgur.com/AdDZgLY)
+![alt tag](https://imgur.com/AdDZgLY.jpg)
 
 Step 2. Log on Heroku.
 
-![alt tag](https://imgur.com/L1cnYWk)
+![alt tag](https://imgur.com/L1cnYWk.jpg)
 
 Step 3. Enjoy it on Heroku.
 
