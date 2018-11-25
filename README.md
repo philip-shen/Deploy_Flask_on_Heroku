@@ -64,7 +64,7 @@ Step 2. Log on Heroku.
 
 Step 3. Enjoy it on Heroku.
 
-![alt tag](https://marvelcomics-excelsior.herokuapp.com/)
+* [Heoku Demo](https://marvelcomics-excelsior.herokuapp.com/)
 
 ## Environment Configuration
 * Windows 10
