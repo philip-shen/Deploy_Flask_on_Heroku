@@ -1,7 +1,7 @@
 from flask import *
 from datetime import datetime
 from dbModel import *
-
+from urllib.parse import urlparse
 
 # 2018/11/14 
 # https://stackoverflow.com/questions/45274152/flask-sqlalchemy-keyerror-sqlalchemy-track-modifications?rq=1
@@ -19,7 +19,21 @@ def index():
     for _data in data_GoogleDrive_callputjpg:
         history_dic['title'] = _data.title
         history_dic['Id'] = _data.Id
-        history_dic['title1'] = _data.title1
+        #2018/11/29
+        #https://stackoverflow.com/questions/38490651/how-to-displayimage-from-google-drive-at-page-html
+        # Replace the open part of the link with uc and it will work. It will become 
+        # <img src="https://drive.google.com/uc?id=0B0etQtBsI2KmVGVmYjNOSS15VVk" />
+        '''
+        >>from urllib.parse import urlparse
+        >>url="https://drive.google.com/file/d/1jprj0v8z6sf_traLnXIIGgOnFJkB7_UN/view?usp=drivesdk"
+        >>> parsed = urlparse(url)
+        >>>print(parsed)
+        ParseResult(scheme='https', netloc='drive.google.com', path='/file/d/1jprj0v8z6sf_traLnXIIGgOnFJkB7_UN/view', params='', query='usp=drivesdk', fragment='')
+        >>> print(parsed.path.split('/'))
+        ['', 'file', 'd', '1jprj0v8z6sf_traLnXIIGgOnFJkB7_UN', 'view']
+        '''
+        gdrive_fileid = urlparse(_data.title1).path.split('/')[-2]
+        history_dic['title1'] = "<img src=\"https://drive.google.com/uc?id={}\" alt=\"\" style=\"width:100%;max-width:400px\" />".format(gdrive_fileid)#_data.title1
         history_dic['modifiedDate'] = _data.modifiedDate#.strftime('%Y/%m/%d %H:%M:%S')
         history_list.append(history_dic)
         history_dic = {}

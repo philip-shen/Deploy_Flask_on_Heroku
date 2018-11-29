@@ -25,7 +25,6 @@ class GDrive_MoneyHunter():
 
         self.db.session.commit()
         duration = time.time() - starttime
-        #q = self.db.session.query(GoogleDrive_callputjpg)
         q = self.db.session.query(self.dbmodel_class)
         print('Insert {} rows into table.'.format(get_count(q)))
         print('SA ORM Bulk insert, using dictionaries- total time: {:.2f} seconds'.format(duration))
@@ -55,5 +54,4 @@ if __name__ == '__main__':
 
     list_foldersfiles=localgoogle_drive.listfolder(drive,parent_id)
     '''Then insert data into table.'''    
-    #GDrive_MoneyHunter(list_foldersfiles,db).DB_Insert()
     GDrive_MoneyHunter(list_foldersfiles,db,GoogleDrive_callputjpg).DB_Insert()
