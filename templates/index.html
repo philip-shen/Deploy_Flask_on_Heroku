@@ -18,13 +18,14 @@
         th {
             padding: 10px;
         }
-            
+        /*    
         td {
             vertical-align: middle;
             text-align: center;
             padding: 5px;
             border: 1px solid #DDD;
         }
+        */
         td img {
             width: 25%;
             height: 25%;
@@ -39,8 +40,8 @@
             /*
             height:175px;
             */
-            width: auto;
-            height: auto;
+            width: 350%;
+            height: 300%;
         }
     </style>
     <script src="static/javascripts/jquery.min.js"></script>
@@ -66,9 +67,16 @@
             <tbody>
                {% for history in history_list %}
                    <tr>
+                        
                         <td>{{ history.Id }}</td>
+                        
                         <td>{{ history.title }}</td>
-                        <td><img id={{ history.gdrive_fileid }} src={{ history.title1 }} /> </td>
+                        
+                        <td>
+                            <div style='position:relative;width:100%;height:100%;'>
+                                <img id={{ history.gdrive_fileid }} src={{ history.title1 }} />
+                            </div>
+                        </td>        
                         <td>{{ history.modifiedDate }}</td>
                     </tr>
                {% endfor%}
@@ -79,12 +87,6 @@
     <script>
         $('#datatables').DataTable();
     </script>
-    <script>
-        $('td img').on('mouseenter',function(){
-            $(this).css({
-                'height':'400px'
-            });
-        });
-    </script>
+    
 </body>
 </html>
