@@ -13,7 +13,9 @@ app.debug=True
 @app.route('/index')
 def index():
     data = "Deploying a Flask App To Heroku"
-    data_GoogleDrive_callputjpg = GoogleDrive_callputjpg.query.all()
+    #data_GoogleDrive_callputjpg = GoogleDrive_callputjpg.query.all()
+    #2018/11/30 select 50 row records for testing
+    data_GoogleDrive_callputjpg = GoogleDrive_callputjpg.query.filter(GoogleDrive_callputjpg.Id.between('1', '50'))
     history_dic = {}
     history_list = []
     for _data in data_GoogleDrive_callputjpg:
