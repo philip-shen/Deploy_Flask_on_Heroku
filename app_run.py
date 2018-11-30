@@ -33,7 +33,9 @@ def index():
         ['', 'file', 'd', '1jprj0v8z6sf_traLnXIIGgOnFJkB7_UN', 'view']
         '''
         gdrive_fileid = urlparse(_data.title1).path.split('/')[-2]
-        history_dic['title1'] = "<img src=\"https://drive.google.com/uc?id={}\" alt=\"\" style=\"width:100%;max-width:400px\" />".format(gdrive_fileid)#_data.title1
+        history_dic['gdrive_fileid'] = gdrive_fileid
+        #history_dic['title1'] = "<img src=\"https://drive.google.com/uc?id={}\" alt=\"\" />".format(gdrive_fileid)#_data.title1
+        history_dic['title1'] = "https://drive.google.com/uc?id={}".format(gdrive_fileid)
         history_dic['modifiedDate'] = _data.modifiedDate#.strftime('%Y/%m/%d %H:%M:%S')
         history_list.append(history_dic)
         history_dic = {}

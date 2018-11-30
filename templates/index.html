@@ -4,9 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>This is example</title>
+    <title>MoneyHunter Target</title>
     <link type="text/css" rel="stylesheet" href="static/stylesheets/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="static/stylesheets/jquery.dataTables.css">
+    <style>
+        table {
+            width: 600px;
+            padding: 10px;
+            background: #FFF;
+            border: 1px solid #BBB;
+        }
+            
+        th {
+            padding: 10px;
+        }
+            
+        td {
+            vertical-align: middle;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #DDD;
+        }
+        td img {
+            width: 25%;
+            height: 25%;
+        }
+        /*    
+        td img:hover{
+            width: 90%;
+            height: auto;
+        }
+        */
+        td:hover img{
+            /*
+            height:175px;
+            */
+            width: auto;
+            height: auto;
+        }
+    </style>
     <script src="static/javascripts/jquery.min.js"></script>
     <script src="static/javascripts/bootstrap.min.js"></script>
     <script src="static/javascripts/jquery.dataTables.js"></script>
@@ -14,7 +50,7 @@
 <body>
      <div class="container">
         <div class="jumbotron">
-            <h1>This is example</h1>
+            <h1>MoneyHunter Target Search</h1>
             <p>{{data}} Demo</p>
         </div>        
         <h2>database information</h2>
@@ -32,7 +68,7 @@
                    <tr>
                         <td>{{ history.Id }}</td>
                         <td>{{ history.title }}</td>
-                        <td>{{ history.title1 }}</td>
+                        <td><img id={{ history.gdrive_fileid }} src={{ history.title1 }} /> </td>
                         <td>{{ history.modifiedDate }}</td>
                     </tr>
                {% endfor%}
@@ -42,6 +78,13 @@
 
     <script>
         $('#datatables').DataTable();
+    </script>
+    <script>
+        $('td img').on('mouseenter',function(){
+            $(this).css({
+                'height':'400px'
+            });
+        });
     </script>
 </body>
 </html>

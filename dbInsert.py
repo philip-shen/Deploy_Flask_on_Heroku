@@ -44,14 +44,14 @@ if __name__ == '__main__':
     str_client_credentials = localReadConfig.get_flask_sqlalchemy_setting('client_credentials')
     parent_id = localReadConfig.get_flask_sqlalchemy_setting('parent_id_folder')
 
-    '''Delete all rows first.'''
+    '''Delete all rows first'''
     GDrive_MoneyHunter([],db,GoogleDrive_callputjpg).DB_DeleteAll()
-
+    '''Get fileid of image from Google Drive'''
     str_candlestick_filepath = ''#
     localgoogle_drive = GoogleCloudDrive(str_candlestick_filepath)
     gauth = localgoogle_drive.GDriveAuth(str_client_credentials)
     drive = GoogleDrive(gauth)
 
     list_foldersfiles=localgoogle_drive.listfolder(drive,parent_id)
-    '''Then insert data into table.'''    
+    '''Then insert data into table'''    
     GDrive_MoneyHunter(list_foldersfiles,db,GoogleDrive_callputjpg).DB_Insert()

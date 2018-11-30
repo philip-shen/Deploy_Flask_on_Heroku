@@ -76,3 +76,4 @@ Step 3. Enjoy it on Heroku.
 * [Deploying-Flask-To-Heroku 今天教大家如何佈署 Flask App 到 Heroku](https://github.com/twtrubiks/Deploying-Flask-To-Heroku)
 * [flask_sqlalchemy_bulk_insert Performance test of bulk insert that inserts multiple rows from Google Drive by flask sqlalchemy](https://github.com/philip-shen/flask_sqlalchemy_bulk_insert)
 * [w3schools](https://www.w3schools.com/default.asp)
+* [How to expand an image in a table cell on hover (through CSS)](https://stackoverflow.com/questions/36655467/how-to-expand-an-image-in-a-table-cell-on-hover-through-css)
