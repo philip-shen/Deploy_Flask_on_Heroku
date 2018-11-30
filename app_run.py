@@ -15,7 +15,7 @@ def index():
     data = "Deploying a Flask App To Heroku"
     #data_GoogleDrive_callputjpg = GoogleDrive_callputjpg.query.all()
     #2018/11/30 select 50 row records for testing
-    data_GoogleDrive_callputjpg = GoogleDrive_callputjpg.query.filter(GoogleDrive_callputjpg.Id.between('1', '100'))
+    data_GoogleDrive_callputjpg = GoogleDrive_callputjpg.query.filter(GoogleDrive_callputjpg.Id.between('1', '500'))
     history_dic = {}
     history_list = []
     for _data in data_GoogleDrive_callputjpg:
@@ -37,7 +37,18 @@ def index():
         gdrive_fileid = urlparse(_data.title1).path.split('/')[-2]
         history_dic['gdrive_fileid'] = '{}'.format(gdrive_fileid)
         #history_dic['title1'] = "<img src=\"https://drive.google.com/uc?id={}\" alt=\"\" />".format(gdrive_fileid)#_data.title1
-        history_dic['title1'] = "https://drive.google.com/uc?id={}".format(gdrive_fileid)
+        #history_dic['title1'] = "https://drive.google.com/uc?id={}".format(gdrive_fileid)
+        ''''
+        https://support.awesome-table.com/hc/en-us/articles/115002196665-Display-images-from-Google-Drive
+        3 - Display your images
+        Now that we have the image IDs and we've properly configured the sharing settings, we can specify how the images should be displayed using the prescribed formats below.
+        
+        Since we're using templates, this means we can also specify the dimensions:
+        https://drive.google.com/thumbnail?id={{imageID}}&sz=w{{width}}-h{{height}}
+        You can use absolute values (pixels) or relative values (%) when specifying the width and height.
+        '''
+        history_dic['title1'] = "https://drive.google.com/thumbnail?id={}&sz=w950-h800".format(gdrive_fileid)
+
         history_dic['modifiedDate'] = _data.modifiedDate#.strftime('%Y/%m/%d %H:%M:%S')
         history_list.append(history_dic)
         history_dic = {}
