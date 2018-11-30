@@ -58,11 +58,19 @@ Step 1. heroku git:remote -a
 
 ![alt tag](https://imgur.com/AdDZgLY.jpg)
 
-Step 2. Log on Heroku.
+Step 2. Log in Heroku.
 
 ![alt tag](https://imgur.com/L1cnYWk.jpg)
 
-Step 3. Enjoy it on Heroku.
+Step 3. git add, commit and push to Heroku.
+
+![alt tag](https://i.imgur.com/ZkVKriw.jpg)
+
+Step 4. Check log on Heroku.
+
+![alt tag](https://i.imgur.com/cFS1O6p.jpg)
+
+Step 5. Enjoy it on Heroku.
 
 * [Heoku Demo](https://marvelcomics-excelsior.herokuapp.com/)
 
