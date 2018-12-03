@@ -15,7 +15,7 @@ def index():
     data = "Deploying a Flask App To Heroku"
     #data_GoogleDrive_callputjpg = GoogleDrive_callputjpg.query.all()
     #2018/11/30 select 50 row records for testing
-    data_GoogleDrive_callputjpg = GoogleDrive_callputjpg.query.filter(GoogleDrive_callputjpg.Id.between('1', '500'))
+    data_GoogleDrive_callputjpg = GoogleDrive_callputjpg.query.filter(GoogleDrive_callputjpg.Id.between('1', '100'))
     history_dic = {}
     history_list = []
     for _data in data_GoogleDrive_callputjpg:
