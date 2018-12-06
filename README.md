@@ -2,7 +2,18 @@
 Deploy a flask APP on Heroku.
 
 ## DB Operation
-Step 1.
+Step 1. Modify config.py to setup DB configuration parameter.
+``` 
+# Uncomment the line below if you want to work with a local DB
+#SQLALCHEMY_DATABASE_URI = 'sqlite:///app.db'
+#SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://flaskdemo:flaskdemo@flaskdemo.cwsaehb7ywmi.us-east-1.rds.amazonaws.com:3306/flaskdemo'
+
+SQLALCHEMY_DATABASE_URI = 'postgres://xxxxxxxxxx'
+SQLALCHEMY_COMMIT_ON_TEARDOWN = True
+SQLALCHEMY_POOL_RECYCLE = 3600
+``` 
+
+Step 2.
 ``` 
 (Flask_trial) d:\project\Python\Deploy_Flask_on_Heroku>python dbcreate.py db init
 C:\Users\SCS\Envs\Flask_trial\lib\site-packages\flask_sqlalchemy\__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRAC
@@ -12,7 +23,7 @@ press this warning.
 Error: Directory migrations already exists
 ``` 
 
-Step 2.
+Step 3.
 ``` 
 (Flask_trial) d:\project\Python\Deploy_Flask_on_Heroku>python dbcreate.py db migrate
 C:\Users\SCS\Envs\Flask_trial\lib\site-packages\flask_sqlalchemy\__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRAC
@@ -26,7 +37,7 @@ INFO  [alembic.autogenerate.compare] Detected added table 'PictureDate'
 Generating d:\project\Python\Deploy_Flask_on_Heroku\migrations\versions\4663c0d429d6_.py ... done
 ``` 
 
-Step 3.
+Step 4.
 ``` 
 (Flask_trial) d:\project\Python\Deploy_Flask_on_Heroku>python dbcreate.py db upgrade
 C:\Users\SCS\Envs\Flask_trial\lib\site-packages\flask_sqlalchemy\__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
@@ -36,7 +47,7 @@ INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
 INFO  [alembic.runtime.migration] Running upgrade 64a46080374d -> 4663c0d429d6, empty message
 ``` 
 
-Step 4.
+Step 5.
 ``` 
 (Flask_trial) d:\project\Python\Deploy_Flask_on_Heroku>python dbInsert.py
 C:\Users\SCS\Envs\Flask_trial\lib\site-packages\flask_sqlalchemy\__init__.py:794: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
@@ -49,7 +60,7 @@ Insert 1038 rows into table.
 SA ORM Bulk insert, using dictionaries- total time: 0.40 seconds
 ``` 
 
-Step 5. Enjoy it.
+Step 6. Enjoy it.
 
 ![alt tag](https://imgur.com/yoSxIRg.jpg)
 
