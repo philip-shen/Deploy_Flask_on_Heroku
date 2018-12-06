@@ -2,7 +2,7 @@ from dbModel import *
 from models.googleDrive import  *
 from models.readConfig import *
 from pydrive.drive import GoogleDrive
-
+#from models import db
 
 class GDrive_MoneyHunter():
     

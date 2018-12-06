@@ -5,8 +5,11 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func
 
 app = Flask(__name__)
+'''
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+'''
+app.config.from_object('config')
 db = SQLAlchemy(app)
 
 class PictureDate(db.Model):
@@ -81,7 +84,7 @@ class DellTest():
     def del_all(self):
         try:
             num_rows_deleted = self.db.session.query(self.dbmodel_class).delete()
-            #self.db.session.commit()
+            #self.db.session.commit()            
         except:
             self.db.session.rollback()
 
